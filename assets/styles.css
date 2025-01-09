@@ -623,7 +623,7 @@ a:hover:not(.button):is(.dark *), button:hover:is(.dark *) {
   border-color: rgb(30 58 138 / var(--tw-border-opacity, 1));
 }
 
-[data-theme="default"] {
+[data-css-theme="default"] {
   .button {
     border-radius: 0.375rem;
   }
@@ -647,7 +647,7 @@ a:hover:not(.button):is(.dark *), button:hover:is(.dark *) {
   }
 }
 
-[data-theme="gradient-1"] {
+[data-css-theme="gradient-1"] {
   body {
     --tw-bg-opacity: 1;
     background-color: rgb(239 246 255 / var(--tw-bg-opacity, 1));
@@ -729,7 +729,7 @@ a:hover:not(.button):is(.dark *), button:hover:is(.dark *) {
   }
 }
 
-[data-theme="gradient-2"] {
+[data-css-theme="gradient-2"] {
   body {
     --tw-bg-opacity: 1;
     background-color: rgb(239 246 255 / var(--tw-bg-opacity, 1));
