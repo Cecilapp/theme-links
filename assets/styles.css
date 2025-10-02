@@ -515,9 +515,6 @@
         color: var(--color-primary-200);
       }
     }
-    #buttons {
-      margin-bottom: calc(var(--spacing) * 6);
-    }
     .button {
       color: var(--color-primary-700);
       &:where(.dark, .dark *) {
@@ -589,7 +586,6 @@
       }
     }
     #buttons {
-      margin-bottom: calc(var(--spacing) * 6);
       @media (width >= 40rem) {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
