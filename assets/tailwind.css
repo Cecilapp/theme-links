@@ -51,6 +51,7 @@
 @layer components {
   /* links buttons */
   .button {
+    @apply overflow-hidden;
     @apply bg-primary-50 text-primary-900 dark:bg-primary-950 dark:text-primary-50;
     @apply dark:brightness-90;
     @apply font-semibold;
