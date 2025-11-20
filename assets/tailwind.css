@@ -42,9 +42,12 @@
   a, button {
     @apply text-primary-900 dark:text-primary-50;
   }
-  /* links hover */
   a:hover:not(.button), button:hover {
     @apply text-primary-700 dark:text-primary-200;
+  }
+  /* buttons pointer */
+  button {
+    @apply cursor-pointer;
   }
 }
 

@@ -487,6 +487,9 @@
       color: var(--color-primary-200);
     }
   }
+  button {
+    cursor: pointer;
+  }
 }
 @layer components {
   .button {
