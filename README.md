@@ -27,6 +27,10 @@ theme:
   - links
 ```
 
+## Customization
+
+Templates only use semantic classes (`.layout`, `.header`, `.avatar`, `.site-title`, `.site-baseline`, `.content`, `.footer`, `.buttons`, `.button`, `.button-link`, `.button-icon`, `.button-favicon`, `.button-title`, `.button-media`, `.social`, `.social-icon`, `.social-<name>`, etc.): their appearance is defined in `assets/tailwind.css` and can be overridden in your own `assets/tailwind.css`.
+
 ## Development
 
 ### Install `tailwind-builder`
