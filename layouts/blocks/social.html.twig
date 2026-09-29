@@ -14,12 +14,6 @@
         {#- social identities ~#}
         {%- if site.social|default([]) ~%}
         <div class="social">
-          {%- if site.author.email is defined ~%}
-          <a href="mailto:{{ site.author.email }}" target="_blank" title="{% trans %}Email me{% endtrans %}">
-            <span class="social-icon social-email">{{ fontawesome.icon('envelope', 'regular', '2xl') ~}}</span>
-            <span class="sr-only">{% trans %}Email me{% endtrans %}</span>
-          </a>
-          {%- endif ~%}
           {%- for social_name, social_values in site.social ~%}
             {%- if social_values['url'] is defined ~%}
           <a href="{{ social_values['url'] }}" target="_blank" title="{{ social_name|capitalize }}">
@@ -28,5 +22,12 @@
           </a>
             {%- endif ~%}
           {%- endfor ~%}
+          {#- email link ~#}
+          {%- if site.author.email is defined ~%}
+          <a href="mailto:{{ site.author.email }}" target="_blank" title="{% trans %}Email me{% endtrans %}">
+            <span class="social-icon social-email">{{ fontawesome.icon('envelope', 'regular', '2xl') ~}}</span>
+            <span class="sr-only">{% trans %}Email me{% endtrans %}</span>
+          </a>
+          {%- endif ~%}
         </div>
         {%- endif ~%}
