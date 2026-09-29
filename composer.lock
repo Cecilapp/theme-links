@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "aligny/tailwind-builder",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ArnaudLigny/tailwind-builder.git",
-                "reference": "da6dfb30e651964d8e1e79ccef401b5e09b9dfd8"
+                "reference": "ccc1e5e4a8d6cc756ff5ad7f04a6d20a28b2ad21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ArnaudLigny/tailwind-builder/zipball/da6dfb30e651964d8e1e79ccef401b5e09b9dfd8",
-                "reference": "da6dfb30e651964d8e1e79ccef401b5e09b9dfd8",
+                "url": "https://api.github.com/repos/ArnaudLigny/tailwind-builder/zipball/ccc1e5e4a8d6cc756ff5ad7f04a6d20a28b2ad21",
+                "reference": "ccc1e5e4a8d6cc756ff5ad7f04a6d20a28b2ad21",
                 "shasum": ""
             },
             "require": {
@@ -53,7 +53,7 @@
             ],
             "support": {
                 "issues": "https://github.com/ArnaudLigny/tailwind-builder/issues",
-                "source": "https://github.com/ArnaudLigny/tailwind-builder/tree/1.2.1"
+                "source": "https://github.com/ArnaudLigny/tailwind-builder/tree/1.2.2"
             },
             "funding": [
                 {
@@ -61,7 +61,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-07-01T21:42:05+00:00"
+            "time": "2026-09-29T15:02:28+00:00"
         },
         {
             "name": "cecil/theme-fontawesome",
@@ -235,16 +235,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v7.4.19",
+            "version": "v7.4.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "3a1973458b153f566a8d7499bc06ece323d60063"
+                "reference": "d7bca2fe05241dc7732d0c8b6d551b879f5d0a7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/3a1973458b153f566a8d7499bc06ece323d60063",
-                "reference": "3a1973458b153f566a8d7499bc06ece323d60063",
+                "url": "https://api.github.com/repos/symfony/console/zipball/d7bca2fe05241dc7732d0c8b6d551b879f5d0a7d",
+                "reference": "d7bca2fe05241dc7732d0c8b6d551b879f5d0a7d",
                 "shasum": ""
             },
             "require": {
@@ -309,7 +309,7 @@
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v7.4.19"
+                "source": "https://github.com/symfony/console/tree/v7.4.20"
             },
             "funding": [
                 {
@@ -329,7 +329,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-09-13T10:38:41+00:00"
+            "time": "2026-09-18T15:55:00+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",

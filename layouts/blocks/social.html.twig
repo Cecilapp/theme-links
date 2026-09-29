@@ -1,63 +1,33 @@
 {%- import 'macros/fontawesome.twig' as fontawesome -%}
 {%- set social_icons = {
-  github: {
-    icon: 'github',
-    color: 'text-social-github',
-  },
-  linkedin: {
-    icon: 'linkedin',
-    color: 'text-social-linkedin',
-  },
-  instagram: {
-    icon: 'instagram',
-    color: 'text-social-instagram',
-  },
-  youtube: {
-    icon: 'youtube',
-    color: 'text-social-youtube',
-  },
-  mastodon: {
-    icon: 'mastodon',
-    color: 'text-social-mastodon',
-  },
-  steam: {
-    icon: 'steam',
-    color: 'text-social-steam',
-  },
-  bluesky: {
-    icon: 'bluesky',
-    color: 'text-social-bluesky',
-  },
-  threads: {
-    icon: 'threads',
-    color: 'text-social-threads',
-  },
-  twitter: {
-    icon: 'twitter',
-    color: 'text-social-twitter',
-  },
-  x: {
-    icon: 'x-twitter',
-    color: 'text-social-x',
-  },
+  github: 'github',
+  linkedin: 'linkedin',
+  instagram: 'instagram',
+  youtube: 'youtube',
+  mastodon: 'mastodon',
+  steam: 'steam',
+  bluesky: 'bluesky',
+  threads: 'threads',
+  twitter: 'twitter',
+  x: 'x-twitter',
 } -%}
         {#- social identities ~#}
         {%- if site.social|default([]) ~%}
-        <div class="mt-4 flex flex-row justify-center space-x-3">
-          {%- if site.author.email is defined ~%}
-          <a href="mailto:{{ site.author.email }}" target="_blank" title="{% trans %}Email me{% endtrans %}">
-            <span class="text-inherit dark:text-inherit">{{ fontawesome.icon('envelope', 'regular', 'xl') ~}}</span>
-            <span class="sr-only">{% trans %}Email me{% endtrans %}</span>
-          </a>
-          {%- endif ~%}
+        <div class="social">
           {%- for social_name, social_values in site.social ~%}
             {%- if social_values['url'] is defined ~%}
-              {%- set icon, color = social_icons[social_name]['icon']|default(social_name), social_icons[social_name]['color']|default('text-inherit') ~%}
           <a href="{{ social_values['url'] }}" target="_blank" title="{{ social_name|capitalize }}">
-            <span class="{{ color }} dark:text-inherit">{{ fontawesome.icon(icon, 'brands', 'xl') ~}}</span>
+            <span class="social-icon social-{{ social_name }}">{{ fontawesome.icon(social_icons[social_name]|default(social_name), 'brands', '2xl') ~}}</span>
             <span class="sr-only">{{ social_name|capitalize }}</span>
           </a>
             {%- endif ~%}
           {%- endfor ~%}
+          {#- email link ~#}
+          {%- if site.author.email is defined ~%}
+          <a href="mailto:{{ site.author.email }}" target="_blank" title="{% trans %}Email me{% endtrans %}">
+            <span class="social-icon social-email">{{ fontawesome.icon('envelope', 'regular', '2xl') ~}}</span>
+            <span class="sr-only">{% trans %}Email me{% endtrans %}</span>
+          </a>
+          {%- endif ~%}
         </div>
         {%- endif ~%}

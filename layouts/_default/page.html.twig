@@ -12,25 +12,25 @@
     {{- include('partials/pwa.html.twig', {site}, with_context = false) ~}}
   </head>
   <body>
-    <div class="min-h-screen md:min-h-full max-w-lg flex flex-col mx-auto md:my-8 px-4 md:px-8 pt-8 md:pt-12 pb-4 md:rounded-3xl md:shadow-xl relative">
+    <div class="layout">
       {#- color scheme button ~#}
-      <div class="absolute top-3.5 md:top-6.5 left-4 md:left-8 opacity-50 hover:opacity-100">
+      <div class="theme-selector">
         {{ include('partials/selector-theme-icon.html.twig') }}
       </div>
       {#- share button ~#}
-      <div class="absolute top-3 md:top-6 right-4 md:right-8 opacity-50 hover:opacity-100">
+      <div class="share">
         <button id="share-button" type="button" title="{% trans %}Share{% endtrans %}">
           {{ fontawesome.icon('arrow-up-from-bracket', 'solid', 'lg') ~}}<span class="sr-only">{% trans %}Share{% endtrans %}</span>
         </button>
       </div>
-      <header class="text-center">
+      <header class="header">
         {%- block header ~%}
         {#- avatar ~#}
         {{ html(
           asset(site.avatar|default('avatar.png')),
           attributes={
             width: 128,
-            class: 'max-w-24 rounded-full m-auto shadow-2xl dark:brightness-90',
+            class: 'avatar',
             alt: 'Avatar of %name%'|trans({'%name%': site.title}),
             fetchpriority: 'high'
           },
@@ -41,23 +41,23 @@
         ) }}
         {#- name + baseline ~#}
         <h1>
-          <div class="text-xl font-bold pt-4 pb-1">{{ site.title }}</div>
-          <div class="text-base font-medium">{{ site.baseline }}</div>
+          <div class="site-title">{{ site.title }}</div>
+          <div class="site-baseline">{{ site.baseline }}</div>
         </h1>
         {%- endblock header ~%}
       </header>
-      <main class="text-center">
+      <main class="main">
         {%- block main ~%}
-        <div class="mt-4 font-normal">
+        <div class="content">
           {%- block content ~%}
           {{ page.content }}
           {%- endblock content ~%}
         </div>
         {%- endblock main ~%}
       </main>
-      <footer class="mt-6 text-center">
+      <footer class="footer">
         {%- block footer ~%}
-        <div class="text-sm">
+        <div class="powered-by">
           {% set powered_by -%}
           <a href="https://links.cecil.app" target="_blank">Cecil Links</a>
           {%- endset -%}
