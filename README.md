@@ -1,6 +1,6 @@
 # _Links_ theme
 
-Theme for [Cecil](https://cecil.app), powered by [Tailwind CSS](https://tailwindcss.com) and [Font Awesome](https://fontawesome.com).
+_Links_ is a minimalist theme for creating link-focused pages with Cecil, powered by [Tailwind CSS](https://tailwindcss.com) and [Font Awesome](https://fontawesome.com).
 
 ![Screenshot](./docs/screenshot.png)
 
