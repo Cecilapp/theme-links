@@ -54,7 +54,7 @@
                 <span class="button-icon">{{ fontawesome.icon(link.icon|default('solid:link')|split(':')[1], link.icon|default('solid:link')|split(':')[0], '2xl') }}</span>
                 {%- elseif link.url|default -%}
                   {#- website image as icon fallback ~#}
-                  {%- set website_image = image_from_website(link.url, {alt: '', loading: 'lazy'}) -%}
+                  {%- set website_image = image_from_website(link.url, {alt: '', loading: 'lazy'}, {fallback: link.fallback|default}) -%}
                   {%- if website_image ~%}
                 <span class="button-favicon">{{ website_image|raw }}</span>
                   {%- endif ~%}

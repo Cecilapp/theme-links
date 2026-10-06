@@ -47,6 +47,9 @@ blocks:
         url: <url>
         color: "<#hexa_code>" # optional
         icon: <style>:<name>  # Font Awesome icon, optional (e.g. "brands:github")
+      - title: <title>
+        url: <url>
+        fallback: <path>      # optional, image used if no image is found on the website
   - name: links
     items:
       - title: <title>
@@ -57,6 +60,8 @@ blocks:
   - name: social
 ---
 ```
+
+If a link has no `icon`, the illustration image of the linked website (Open Graph, Twitter, etc.) is used instead. If no image is found, the `fallback` image (path to an asset) is displayed, if set.
 
 Each links block is rendered as an `<ol class="buttons">` with a unique id (`buttons-<block index>`), and each link has the id `buttons-<block index>-<link index>`.
 
