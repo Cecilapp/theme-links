@@ -4,25 +4,25 @@
 {%- set links = block.items|default(page.links|default([])) -%}
 {#- unique prefix to allow several links blocks in the same page -#}
 {%- set prefix = 'buttons-' ~ block_index|default(1) -%}
-        {#- block links ~#}
-        {%- if links|length > 0 ~%}
+      {#- block links -#}
+      {%- if links|length > 0 ~%}
         <ol id="{{ prefix }}" class="buttons">
           {%- for link in links ~%}
           <li>
-            {#- background color (from link) + text color (auto contrast) ~#}
+            {#- background color (from link) + text color (auto contrast) -#}
             {%- set button_style = null -%}
-            {%- if options.color|default('page') == 'page' and link.color|default ~%}
-              {%- set rgb = link.color|hex_to_rgb -%}
+            {%- if options.color|default('page') == 'page' and link.color|default -%}
+              {%- set rgb = link.color|hex_to_rgb ~%}
             <style>{% apply minify_css ~%}
               :root {
                 --{{ prefix }}-{{ loop.index }}-color: calc((((({{ rgb.red }} * 299) + ({{ rgb.green }} * 587) + ({{ rgb.blue }} * 114)) / 1000) - 128) * -1000);
               }
             {% endapply ~%}</style>
               {%- set button_style = ' style="border:0;background-color:' ~ link.color ~ ';color:rgb(var(--' ~ prefix ~ '-' ~ loop.index ~ '-color),var(--' ~ prefix ~ '-' ~ loop.index ~ '-color),var(--' ~ prefix ~ '-' ~ loop.index ~ '-color))"' ~%}
-            {%- endif ~%}
+            {%- endif -%}
             {#- link ~#}
             <a id="{{ prefix }}-{{ loop.index }}"{% if link.url|default %} href="{{ link.url }}"{% endif %} target="_blank">
-              {#- video ~#}
+              {#- video -#}
               {%- if link.video|default ~%}
               <div class="button button-media">
                 <video controls>
@@ -30,7 +30,7 @@
                 </video>
                 <div>{{ link.title|default }}</div>
               </div>
-              {#- image ~#}
+              {#- image -#}
               {%- elseif link.image|default ~%}
               <div class="button button-media">
                 {{ html(
@@ -46,7 +46,7 @@
                 ) }}
                 <div>{{ link.title|default }}</div>
               </div>
-              {#- button ~#}
+              {#- button -#}
               {%- else ~%}
               <div class="button button-link"{{ button_style|default }}>
                 {%- set website_image = null -%}
@@ -54,7 +54,7 @@
                 <span class="button-icon">{{ fontawesome.icon(link.icon|default('solid:link')|split(':')[1], link.icon|default('solid:link')|split(':')[0], '2xl') }}</span>
                 {%- elseif link.url|default -%}
                   {#- website image as icon fallback ~#}
-                  {%- set website_image = image_from_website(link.url, {alt: '', loading: 'lazy'}, {fallback: link.fallback|default}) -%}
+                  {%- set website_image = image_from_website(link.url, {alt: '', loading: 'lazy', width: 50}, {responsive: 'density', fallback: link.fallback|default}) -%}
                   {%- if website_image ~%}
                 <span class="button-favicon">{{ website_image|raw }}</span>
                   {%- endif ~%}
@@ -78,5 +78,5 @@
             }
           }, false)
         </script>
-        {%- endif ~%}
-        {%- endif ~%}
+        {%- endif -%}
+      {%- endif ~%}
